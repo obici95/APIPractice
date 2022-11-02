@@ -1,7 +1,6 @@
 package test;
 
-import base_urls.ReqresBaseUrl;
-import base_urls.RestfulBaseUrl;
+import baseUrls.RestfulBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 
