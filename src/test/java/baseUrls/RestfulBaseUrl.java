@@ -6,10 +6,10 @@ import org.junit.Before;
 
 public class RestfulBaseUrl {
 
-    protected RequestSpecification spec;
+    protected RequestSpecification specRestFul;
 
     @Before
     public void setup(){
-        spec=new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();
+        specRestFul=new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();
     }
 }

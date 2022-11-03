@@ -25,13 +25,13 @@ And
     @Test
     public void get04() {
         //Set the Url
-        spec.pathParam("first","booking").queryParams("firstname","Jacob","lastname","Davis");
+        specRestFul.pathParam("first","booking").queryParams("firstname","Jacob","lastname","Davis");
 
         //Set The Expected Data
 
 
         //Send The Request and Get The Response
-       Response response= given().spec(spec).when().get("/{first}");
+       Response response= given().spec(specRestFul).when().get("/{first}");
         response.prettyPrint();
 
         //Do Assertion
