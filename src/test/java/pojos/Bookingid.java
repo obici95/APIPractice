@@ -32,7 +32,7 @@ Process finished with exit code 0
      */
 
     private Integer bookingid;
-    private Booking booking;
+    private BookingPojo bookingPojo;
 
 
 }

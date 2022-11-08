@@ -1,18 +1,18 @@
 package pojos;
 
-public class Booking {
+public class BookingPojo {
     /*
-             {
-        "firstname": "Jim",
-        "lastname": "Brown",
-        "totalprice": 111,
-        "depositpaid": true,
-        "bookingdates": {
-            "checkin": "2018-01-01",
-            "checkout": "2019-01-01"
-        },
-        "additionalneeds": "Breakfast"
-    }
+        {
+                "firstname": "James",
+                "lastname": "Brown",
+                "totalprice": 111,
+                "depositpaid": true,
+                "bookingdates": {
+                    "checkin": "2018-01-01",
+                    "checkout": "2019-01-01"
+                },
+                "additionalneeds": "Breakfast"
+            }
 
      */
 
@@ -20,8 +20,20 @@ public class Booking {
     private String lastname;
     private Integer totalprice;
     private Boolean depositpaid;
-    private Bookingdates bookingdates;
+    private BookingDatesPojo bookingdates;
     private String additionalneeds;
+
+    public BookingPojo() {
+    }
+
+    public BookingPojo(String firstname, String lastname, Integer totalprice, Boolean depositpaid, BookingDatesPojo bookingdates, String additionalneeds) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.totalprice = totalprice;
+        this.depositpaid = depositpaid;
+        this.bookingdates = bookingdates;
+        this.additionalneeds = additionalneeds;
+    }
 
     public String getFirstname() {
         return firstname;
@@ -55,11 +67,11 @@ public class Booking {
         this.depositpaid = depositpaid;
     }
 
-    public Bookingdates getBookingdates() {
+    public BookingDatesPojo getBookingdates() {
         return bookingdates;
     }
 
-    public void setBookingdates(Bookingdates bookingdates) {
+    public void setBookingdates(BookingDatesPojo bookingdates) {
         this.bookingdates = bookingdates;
     }
 
@@ -71,21 +83,9 @@ public class Booking {
         this.additionalneeds = additionalneeds;
     }
 
-    public Booking() {
-    }
-
-    public Booking(String firstname, String lastname, Integer totalprice, Boolean depositpaid, Bookingdates bookingdates, String additionalneeds) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.totalprice = totalprice;
-        this.depositpaid = depositpaid;
-        this.bookingdates = bookingdates;
-        this.additionalneeds=additionalneeds;
-    }
-
     @Override
     public String toString() {
-        return "Booking{" +
+        return "BookingPojo{" +
                 "firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", totalprice=" + totalprice +

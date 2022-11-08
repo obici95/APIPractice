@@ -60,6 +60,7 @@ public class API_PostRequest {
                 post(url);
 
         JsonPath actBody=response.jsonPath();
+        System.out.println(actBody);
 
         // 4- Assertion
 

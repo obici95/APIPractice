@@ -22,10 +22,20 @@ public class JsonPlaceHolderTestData {
 
     public Map<String,Object> expDataMapMethod(Integer userId, String title, Boolean completed ){
 
+
         Map<String,Object> expDataMap=new HashMap<>();
-        expDataMap.put("userId",userId);
-        expDataMap.put("title",title);
-        expDataMap.put("completed",completed);
+
+        if ((userId!=null)){
+            expDataMap.put("userId",userId);
+
+        }
+        if ((title!=null)){
+            expDataMap.put("title",title);
+
+        }
+        if ((completed!=null)){
+            expDataMap.put("completed",completed);
+        }
 
         return expDataMap;
     }

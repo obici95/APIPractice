@@ -4,8 +4,9 @@ import baseUrls.RestfulBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
-import pojos.Booking;
-import pojos.Bookingdates;
+import pojos.BookingDatesPojo;
+import pojos.BookingPojo;
+import pojos.BookingDatesPojo;
 import pojos.Bookingid;
 
 import static io.restassured.RestAssured.given;
@@ -54,15 +55,15 @@ Process finished with exit code 0
 
         specRestFul.pathParam("pp1","booking");
 
-        Bookingdates bookingdates=new Bookingdates("2018-01-01","2019-01-01");
+        BookingDatesPojo bookingdates=new BookingDatesPojo("2018-01-01","2019-01-01");
 
 
-        Booking booking=new Booking("Jim","Brown",111,true,bookingdates,"Breakfast");
-        System.out.println(booking);
+        BookingPojo bookingPojo =new BookingPojo("Jim","Brown",111,true,bookingdates,"Breakfast");
+        System.out.println(bookingPojo);
 
         Response response=given().
                 contentType(ContentType.JSON).
-                spec(specRestFul).body(booking).
+                spec(specRestFul).body(bookingPojo).
                 when().
                 post("/{pp1}");
         response.prettyPrint();
@@ -70,12 +71,12 @@ Process finished with exit code 0
         Bookingid responseBody = response.as(Bookingid.class);
 
         assertEquals(200,response.getStatusCode());
-        assertEquals(booking.getFirstname(),responseBody.getBooking().getFirstname());
-        assertEquals(booking.getLastname(),responseBody.getBooking().getLastname());
-        assertEquals(booking.getTotalprice(),responseBody.getBooking().getTotalprice());
-        assertEquals(booking.getDepositpaid(),responseBody.getBooking().getDepositpaid());
-        assertEquals(booking.getBookingdates().getCheckin(),responseBody.getBooking().getBookingdates().getCheckin());
-        assertEquals(booking.getBookingdates().getCheckout(),responseBody.getBooking().getBookingdates().getCheckout());
+        assertEquals(bookingPojo.getFirstname(),responseBody.getBookingPojo().getFirstname());
+        assertEquals(bookingPojo.getLastname(),responseBody.getBookingPojo().getLastname());
+        assertEquals(bookingPojo.getTotalprice(),responseBody.getBookingPojo().getTotalprice());
+        assertEquals(bookingPojo.getDepositpaid(),responseBody.getBookingPojo().getDepositpaid());
+        assertEquals(bookingPojo.getBookingdates().getCheckin(),responseBody.getBookingPojo().getBookingdates().getCheckin());
+        assertEquals(bookingPojo.getBookingdates().getCheckout(),responseBody.getBookingPojo().getBookingdates().getCheckout());
     }
 
 
