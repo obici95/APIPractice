@@ -39,9 +39,9 @@ public class Get12Pojo extends RestfulBaseUrl {
         specRestFul.pathParams("pp1","booking","pp2",5);
 
         //Set the Expected Data
-        BookingDatesPojo bookingDatesPojo=new BookingDatesPojo("2018-01-01","2019-01-01");
+        BookingDatesPojo bookingDatesPojo=new BookingDatesPojo("2021-10-16","2022-07-08");
 
-        BookingPojo expData=new BookingPojo("James","Brown",111,true,bookingDatesPojo,"Breakfast");
+        BookingPojo expData=new BookingPojo("James","Brown",228,false,bookingDatesPojo,null);
         System.out.println(expData);
 
         //Send the Request and Get the Response
