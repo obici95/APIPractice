@@ -1,6 +1,7 @@
 package testDataDeposu;
 
 import org.json.JSONObject;
+import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +41,7 @@ public class JsonPlaceHolderTestData {
         return expDataMap;
     }
 
-    public JSONObject expDataMapMethodJson(Integer userId, String title, Boolean completed ){
+    public JSONObject expDataMethodJson(Integer userId, String title, Boolean completed ){
 
         JSONObject expDatajson=new JSONObject();
         expDatajson.put("userId",userId);
@@ -61,4 +62,18 @@ public class JsonPlaceHolderTestData {
         return requestBodyMap;
     }
 
+    @Test
+    public String expDataInString(Integer userId,String title,Boolean completed) {
+
+        String expData="{\n" +
+                "                 \"userId\": "+userId+",\n" +
+                "                 \"title\": \""+title+"\",\n" +
+                "                 \"completed\": "+completed+"\n" +
+                "               }";
+
+        return expData;
+    }
+
+
 }
+

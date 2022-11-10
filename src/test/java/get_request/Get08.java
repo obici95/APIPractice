@@ -118,7 +118,7 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
 
         //Set The Expected Data ==>Paylodad
         JsonPlaceHolderTestData objJsnPlcHolder=new JsonPlaceHolderTestData();
-        JSONObject expData=objJsnPlcHolder.expDataMapMethodJson(1,"laboriosam mollitia et enim quasi adipisci quia provident illum",false);
+        JSONObject expData=objJsnPlcHolder.expDataMethodJson(1,"laboriosam mollitia et enim quasi adipisci quia provident illum",false);
 
 
         // Send The Request and Get The Response
