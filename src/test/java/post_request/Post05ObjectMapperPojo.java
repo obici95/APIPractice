@@ -39,6 +39,7 @@ public class Post05ObjectMapperPojo extends JsonPlaceHolderBaseUrl {
 
         //Set the Expected Data
         JsonPlaceHolderPojo expData=new JsonPlaceHolderPojo(55,"Tidy your room",false);
+
         System.out.println("expData = " + expData);
 
         //Send the Request and Get the Response
